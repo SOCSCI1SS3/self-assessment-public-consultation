@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" id="pdfForm">
+
+<head>
+<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js">	</script> 
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+   <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto Condensed">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="app">
+    
+  <div class="formContainer">
+    
+	<form id="myform"> 
+		<input class="savePdfButton"
+      type="button"
+			value="Save PDF"
+			@click="savePdf">
+    
+       <div class="titleplusintroplusinstructions">
+
+  <h1  class="maintitle">Term Project Part 2: Public Consultation (20%)</h1>
+    
+<!-- instructions      -->
+  <div class="introplusinstructions">
+      
+<p class="introParagraph">
+This assignment involves a 2-sided assessment process, where you and I will evaluate your work. You will fill out the self-assessment rubric, and I will read your rubric to achieve a marking common ground.
+  </p>  
+    
+  <h3>
+    Instructions:
+  </h3>
+  
+    <ol>
+      
+      <li><b>Fill out the questions below as a team</b> - Please avoid leaving unanswered questions or typing things like “Nothing, everything was perfect” in the question regarding aspects to be improved. Doing this will lower your mark</li>
+      <li><b>Click the Save PDF button </b> at the top of the rubric</li>
+      <li><b>Save the PDF </b> in your computer</li>
+      <li><b>Upload the PDF </b>to the folder Term Project Part 2: Public consultation on A2L (1 per team)</li>
+  </ol>
+
+    </div>
+    </div>
+    
+<!-- name and IDs     -->
+		<label for="fullName"><h2>
+      
+      Name and ID number of group members</h2></label>
+    
+    	<textarea id="fullName"
+				name="fullName"
+				placeholder=""
+        v-show="showTextareas"
+        v-model="fullname"></textarea>
+          <div v-show="showReflections" @click="editTextareas">
+        <p> {{ fullname }} </p>
+          </div>
+   
+<!--  Criterion 1    -->
+    <h2>
+      Criterion 1: Summary of the topic, goals/actions/questions, background information, community-led activities, data collection methods and potential risks to participants
+    </h2>
+    
+    
+<table>
+  <tr>
+    <th>
+  <input type="radio" 
+         id="criterion1-excellent" 
+         name="criterion1" 
+         value="Excellent (up to 5 points)">
+  <label for="criterion1-excellent">Excellent (up to 6 points)</label>
+    </th>
+    
+    <th>
+  <input type="radio" 
+         id="criterion1-good" 
+         name="criterion1"
+         value="Good (up to 4 points)" >
+  <label for="criterion1-good">Good (up to 5 points)</label>
+      </th>
+    
+    <th>
+  <input type="radio" 
+         id="criterion1-fair"
+         name="criterion1" 
+         value="Fair (up to 3 points)">
+  <label for="criterion1-fair">Fair (up to 4 points)</label>
+  </th>
+  <th>
+    <input type="radio" 
+         id="criterion1-poor"
+         name="criterion1" 
+         value="Poor (up to 2 points)">
+  <label for="criterion1-poor">Poor (up to 3 points)</label>
+    </th>
+    </tr>
+  
+  <tr>
+    <td> My team presented an exceptionally clear and concise summary of the topic, goals/actions/questions, background information, community-led activities, data collection methods, and potential risks to participants. We also considered the professor's revisions given to us through A2L on Term Project 1—Proposal </td>
+    
+    <td>My team presented a clear and concise summary of the topic, goals/actions/questions, background information, community-led activities, data collection methods, and potential risks to participants. We also considered the professor's revisions given to us through A2L on Term Project 1—Proposal </td>
+    
+    <td>My team presented a somewhat clear and concise summary of the topic, goals/actions/questions, background information, community-led activities, data collection methods, and potential risks to participants. Or, we missed to include the professor's revisions given to us through A2L on Term Project 1—Proposal
+ </td>
+    
+    <td>My team could have done more to present a clear and concise summary of the topic, goals/actions/questions, background information, community-led activities, data collection methods, and potential risks to participants. And we missed to include the professor's revisions given to us through A2L on Term Project 1—Proposal
+</td>
+  </tr>
+     </table>
+    
+    <table class="reflectionTable"> 
+		<tr>
+      <th> 
+        <label for="criterion1-reflection1">Mention some aspects that your team did to achieve the points above:</label> 
+      </th>
+      </tr>
+      <tr>
+        <td>
+        <textarea id="criterion1-reflection1"
+				name="criterion1"
+				placeholder=""
+        v-show="showTextareas"          
+        v-model="c1r1"></textarea>
+          <div v-show="showReflections" @click="editTextareas">
+        <p> {{ c1r1 }} </p>
+          </div>
+
+          </td>
+      </tr>
+	
+    	<tr>
+        <th>
+          <label for="criterion1-reflection2">Mention some aspects that your team could have done for the assignment to improve in this
+criterion:</label>
+        </th>
+      </tr>
+      <tr>
+        <td>
+		<textarea id="criterion1-reflection2"
+				name="criterion1"
+				placeholder=""
+        v-show="showTextareas"          
+        v-model="c1r2"></textarea>
+      <div v-show="showReflections" @click="editTextareas">
+        <p> {{ c1r2 }} </p>
+          </div>
+        </td>
+      </tr>
+</table>
+    
+ <!--  Criterion 2    -->
+    <h2>
+      Criterion 2: Consultation questions and discussion
+    </h2>
+    
+    
+<table>
+  <tr>
+    <th>
+  <input type="radio" 
+         id="criterion2-excellent" 
+         name="criterion2" 
+         value="Excellent (up to 5 points)">
+  <label for="criterion2-excellent">Excellent (up to 7 points)</label>
+    </th>
+    
+    <th>
+  <input type="radio" 
+         id="criterion2-good" 
+         name="criterion2"
+         value="Good (up to 4 points)">
+  <label for="criterion2-good">Good (up to 6 points)</label>
+      </th>
+    
+    <th>
+  <input type="radio" 
+         id="criterion2-fair"
+         name="criterion2" 
+         value="Fair (up to 3 points)">
+  <label for="criterion2-fair">Fair (up to 5 points)</label>
+  </th>
+  <th>
+    <input type="radio" 
+         id="criterion2-poor"
+         name="criterion2" 
+         value="Poor (up to 2 points)">
+  <label for="criterion2-poor">Poor (up to 4 points)</label>
+    </th>
+    </tr>
+  
+  <tr>
+    <td>My team generated questions that were highly focused on assessing some aspects of our PAR project we felt unsure about, including the topic, goals/actions/questions, activities, data collection methods, or risks. The questions were crafted in such a way that allowed a deep and interesting discussion and reflection for us </td>
+    
+    <td>My team generated questions focused on assessing some aspects of our PAR project we felt unsure about, including the topic, goals/actions/questions, activities, data collection methods, or risks. The questions were crafted in such a way that allowed a deep and interesting discussion and reflection for us</td>
+    
+    <td>My team generated questions focused to a certain degree on assessing some aspects of our PAR project we felt unsure about, including the topic, goals/actions/questions, activities, data collection methods, or risks. Or, the questions could have been  crafted in a more creative way to allow for a deeper discussion and reflection  </td>
+    
+    <td>My team generated questions that could have been more focused on assessing some aspects of our PAR project we felt unsure about, including the topic, goals/actions/questions, activities, data collection methods, or risks. And the questions could have been  crafted in a more creative way to allow for a deeper discussion and reflection  </td>
+  </tr>
+     </table>
+    
+    <table class="reflectionTable"> 
+		<tr>
+      <th> 
+        <label for="criterion2-reflection1">Mention some aspects that your team did to achieve the points above:</label> 
+      </th>
+      </tr>
+      <tr>
+        <td>
+        <textarea id="criterion2-reflection1"
+				name="criterion2"
+				placeholder=""
+        v-show="showTextareas"          
+        v-model="c2r1"></textarea>
+        <div v-show="showReflections" @click="editTextareas">
+        <p> {{ c2r1 }} </p>
+          </div>
+          </td>
+      </tr>
+	
+    	<tr>
+        <th>
+          <label for="criterion2-reflection2">Mention some aspects that your team could have done for the assignment to improve in this
+criterion:</label>
+        </th>
+      </tr>
+      <tr>
+        <td>
+		<textarea id="criterion2-reflection2"
+				name="criterion2"
+				placeholder=""
+        v-show="showTextareas"          
+        v-model="c2r2"></textarea>
+        <div v-show="showReflections" @click="editTextareas">
+        <p> {{ c2r2 }} </p>
+          </div>
+        </td>
+      </tr>
+</table>
+    
+    <!--  Criterion 3    -->
+    <h2>
+      Criterion 3: Audience Engagement
+    </h2>
+    
+    
+<table>
+  <tr>
+    <th>
+  <input type="radio" 
+         id="criterion3-excellent" 
+         name="criterion3" 
+         value="Excellent (up to 5 points)">
+  <label for="criterion3-excellent">Excellent (up to 7 points)</label>
+    </th>
+    
+    <th>
+  <input type="radio" 
+         id="criterion3-good" 
+         name="criterion3"
+         value="Good (up to 4 points)">
+  <label for="criterion3-good">Good (up to 6 points)</label>
+      </th>
+    
+    <th>
+  <input type="radio" 
+         id="criterion3-fair"
+         name="criterion3" 
+         value="Fair (up to 3 points)">
+  <label for="criterion3-fair">Fair (up to 5 points)</label>
+  </th>
+  <th>
+    <input type="radio" 
+         id="criterion3-poor"
+         name="criterion3" 
+         value="Poor (up to 2 points)">
+  <label for="criterion3-poor">Poor (up to 4 points)</label>
+    </th>
+    </tr>
+  
+  <tr>
+    <td>My team engaged the audience highly through very exciting slides and meaningful questions. Our slides summarized our PAR project through bullet points, images, and/or videos rather than dense blocks of text. The audience showed engagement by responding enthusiastically to our consultation questions </td>
+    
+    <td> My team engaged the audience through slides and meaningful questions. Our slides summarized our PAR project through bullet points, images, and/or videos rather than dense blocks of text. The audience showed engagement by responding enthusiastically to our consultation questions  </td>
+    
+    <td>My team engaged the audience to a certain extent. We could have engaged them more by making the slides more dynamic through bullet points, images, and/or videos rather than dense blocks of text. The audience seemed to be bored and/or lost with our presentation and consultation questions</td>
+    
+    <td>My team struggled to engage their audience because the slides contained too much text. And the consultation questions were too generic or trite </td>
+  </tr>
+     </table>
+    
+    <table class="reflectionTable"> 
+		<tr>
+      <th> 
+        <label for="criterion3-reflection1">Mention some aspects that your team did to achieve the points above:</label> 
+      </th>
+      </tr>
+      <tr>
+        <td>
+        <textarea id="criterion3-reflection1"
+				name="criterion3"
+				placeholder=""
+        v-show="showTextareas"          
+        v-model="c3r1"></textarea>
+        <div v-show="showReflections" @click="editTextareas">
+        <p> {{ c3r1 }} </p>
+          </div>
+          </td>
+      </tr>
+	
+    	<tr>
+        <th>
+          <label for="criterion3-reflection2">Mention some aspects that your team could have done for the assignment to improve in this
+criterion:</label>
+        </th>
+      </tr>
+      <tr>
+        <td>
+		<textarea id="criterion3-reflection2"
+				name="criterion3"
+				placeholder=""
+        v-show="showTextareas"          
+        v-model="c3r2"></textarea>
+      <div v-show="showReflections" @click="editTextareas">
+        <p> {{ c3r2 }} </p>
+          </div>
+        </td>
+      </tr>
+</table>
+    
+
+    
+	</form> 
+  </div>
+  </div>
+      <script src="vue.js"></script> 
+
+  
+</body>
+
+</html>

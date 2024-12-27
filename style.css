@@ -1,0 +1,115 @@
+body {
+margin: 1%;
+color: black;
+font-family: "Roboto Condensed"; 
+background-color: #e5e5f7;
+opacity: 1;
+/* background: radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #e5e5f7 20%, #e5e5f7 80%, transparent 80%, transparent) 10px 10px, linear-gradient(#443d48 0.8px, transparent 0.8px) 0 -0.4px, linear-gradient(90deg, #443d48 0.8px, #e5e5f7 0.8px) -0.4px 0;
+background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px; */
+}
+
+
+.formContainer {
+  border-radius: 5px;
+  padding: 1%;
+  text-wrap: wrap;
+   word-wrap:break-word;
+/*   background: linear-gradient(141deg, #443D48 0%, #1fc8db 51%, #443D48 100%); */
+}
+
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+
+}
+
+th {
+background: rgb(255, 0, 128, 0.5);
+color: black;
+font-size: 1.25em;  
+}
+
+td {
+  padding: 1%;
+  width: 25%;
+  text-align: justify;
+  word-wrap:break-word;
+}
+
+[type="radio"] {
+  width: 2em;
+  height: 2em;
+}
+
+[type="button"] {
+  background: rgb(255, 0, 128, 0.5);
+  color: #002422;
+  font-family: "Roboto Condensed"; 
+  font-size: 2em;
+  border-radius: 10px;
+/*   margin-left: 85%; */
+}
+
+/* [type="button"]:hover {
+  background: linear-gradient(0deg, #443D48 0%, #1fc8db 51%, #443D48 100%);   color: white;
+}
+ */
+
+.titleplusintroplusinstructions {
+    display: flex;
+
+}
+
+.maintitle {
+ width: 50%;  
+}
+
+
+.reflectionTable {
+  width: 100%;
+}
+
+.introParagraph {
+  background: none;
+  border: none;
+  min-height: auto;
+  height: auto;
+}
+
+.introplusinstructions {
+  padding: 1%;
+  width: 50%;
+  background: none;
+  border: 1px solid black;  
+  border-radius: 5px;
+  height: auto;
+  
+}
+
+textarea {  
+  resize: none;
+  height: 6em;
+  width:100%;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed"; 
+  font-size: 1em;
+  border-radius: 10px;
+  text-wrap: wrap;
+  word-wrap:break-word;
+}
+
+p {
+  background: white;
+  resize: none;
+  min-height: 6em;
+  height: auto;
+  width:100%;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed"; 
+  font-size: 1em;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-wrap: wrap;
+  word-wrap:break-word;
+}
